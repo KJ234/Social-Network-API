@@ -35,3 +35,12 @@ const userSchema = new Schema(
     id: false,
   }
 );
+
+userSchema.virtual("friendCount").get(function () {
+  return this.friends.length;
+});
+
+// Initialize our Post model
+const User = model("User", userSchema);
+
+module.exports = User;
