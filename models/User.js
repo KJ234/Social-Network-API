@@ -14,23 +14,12 @@ const userSchema = new Schema(
       unique: true,
       match: /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/,
     },
-    thoughts: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: "Thought",
-      },
-    ],
-    friends: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: "User",
-      },
-    ],
+    thoughts: [{ type: Schema.Types.ObjectId, ref: "thought" }],
+    friends: [{ type: Schema.Types.ObjectId, ref: "user" }],
   },
   {
     toJSON: {
       virtuals: true,
-      getters: true,
     },
     id: false,
   }
@@ -40,7 +29,6 @@ userSchema.virtual("friendCount").get(function () {
   return this.friends.length;
 });
 
-// Initialize our Post model
-const User = model("User", userSchema);
+const User = model("user", userSchema);
 
 module.exports = User;
