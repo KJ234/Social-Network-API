@@ -12,7 +12,9 @@
 
 ## Description
 
-Create an API for a social networking web application that allows users to post their thoughts, react to their friends' thoughts, and create a friend list. For routing, Express.js, a MongoDB database, and the Mongoose ODM is used. Moment has been used for time## Installation
+Create an API for a social networking web application that allows users to post their thoughts, react to their friends' thoughts, and create a friend list. For routing, Express.js, a MongoDB database, and the Mongoose ODM is used. Moment has been used for time
+
+## Installation
 
 node server.js
 
